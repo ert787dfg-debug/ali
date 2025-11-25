@@ -1,22 +1,32 @@
 /* ثيم ليلي */
 body.night {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: linear-gradient(135deg, #000000, #0d1117, #39ff14); /* أسود + داكن + فسفوري */
+  color: #f0f6fc;
 }
 body.night section {
-  background: #111827;
-  border: 1px solid #1f2937;
+  background: rgba(22, 27, 34, 0.9);
+  border: 1px solid #39ff14;
 }
+body.night .choice.correct { background: #052e16; border-color: #39ff14; }
+body.night .choice.wrong { background: #3f0d0d; border-color: #f85149; }
+body.night .choice.selected { background: #1f6feb; border-color: #58a6ff; }
+body.night #feedback.success { color: #39ff14; }
+body.night #feedback.error { color: #f85149; }
 
 /* ثيم نهاري */
 body.day {
-  background: #f9fafb;
+  background: linear-gradient(135deg, #f0f9ff, #93c5fd, #2563eb); /* أزرق فاتح متدرج */
   color: #111827;
 }
 body.day section {
-  background: #ffffff;
-  border: 1px solid #d1d5db;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #93c5fd;
 }
+body.day .choice.correct { background: #d1fae5; border-color: #16a34a; }
+body.day .choice.wrong { background: #fee2e2; border-color: #dc2626; }
+body.day .choice.selected { background: #bfdbfe; border-color: #2563eb; }
+body.day #feedback.success { color: #2563eb; }
+body.day #feedback.error { color: #dc2626; }
 
 header { text-align: center; padding: 16px; }
 main { max-width: 600px; margin: auto; padding: 20px; }
@@ -25,21 +35,18 @@ section { border-radius: 12px; padding: 20px; text-align: center; margin-top: 20
 button {
   padding: 10px 16px; border-radius: 8px; border: none;
   background: #2563eb; color: white; cursor: pointer;
-  margin-top: 12px;
+  margin-top: 12px; transition: 0.3s;
 }
+button:hover { background: #1e40af; }
 
 #choices { list-style: none; padding: 0; margin: 20px 0; }
 .choice {
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 10px; padding: 12px; margin-bottom: 8px;
-  cursor: pointer;
+  cursor: pointer; transition: 0.3s;
 }
-.choice.correct { border-color: #16a34a; background: #0b1a12; }
-.choice.wrong { border-color: #dc2626; background: #1a0b0b; }
-.choice.selected { border-color: #2563eb; }
+.choice:hover { transform: scale(1.03); }
 
 #feedback { min-height: 24px; font-weight: 600; margin-top: 10px; }
-#feedback.success { color: #16a34a; }
-#feedback.error { color: #dc2626; }
 
 .hidden { display: none; }
